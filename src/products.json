@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Lenovo 17",
+    "imageSrc": "pc-1.png",
+    "description": "High end lenovo laptop"
+  },
+  {
+    "id": "2",
+    "title": "Iphone 14 Pro max",
+    "imageSrc": "iphone-1.png",
+    "description": "Latest iphone with greate camera"
+  },
+  {
+    "id": "3",
+    "title": "HP elitebook sp 31",
+    "imageSrc": "pc-2.webp",
+    "description": "Top game station that runs new games"
+  },
+  {
+    "id": "4",
+    "title": "Iphone X",
+    "imageSrc": "iphone-2.png",
+    "description": "Vintage iphone with good specs"
+  }
+]
