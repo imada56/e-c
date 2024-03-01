@@ -1,19 +1,14 @@
 import './App.css';
-import Card from './component/Card.jsx';
+import CardList from './component/CardList.jsx';
 import NevSearch from './component/NevSearch.jsx';
 import Slider from './component/Slider.jsx';
 
-
-
 function App() {
-  
-  
-
   return (
     <div className="">
       <NevSearch/>
       <Slider/>
-      <Card/>
+      <CardList/>
     </div>
   );
 }
