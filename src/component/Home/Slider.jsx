@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../../Data/img'
+import image from '../../Data/SliderImg'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles

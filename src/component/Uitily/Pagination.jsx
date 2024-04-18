@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ReactPaginate from 'react-paginate'
 import {FaChevronLeft,FaChevronRight} from 'react-icons/fa'
+import { ValueConntext } from '../Context';
 function Pagination() {
+  const {data,onChange} = useContext(ValueConntext);
+  const handlePageClick = (d)=>{
+    onChange(d.selected +1)
+  }
+  const NbrTotalPages=2
   return (
     <div className='   text-xs  '>
          <ReactPaginate
@@ -9,9 +15,9 @@ function Pagination() {
         nextLabel={<span className='w-5 h-5 md:h-8 md:w-8 border-2 flex items-center justify-center rounded-md bg-gray-200  '>
             <FaChevronRight/>
         </span>}
-       // onPageChange={handlePageClick}
+        onPageChange={handlePageClick}
         pageRangeDisplayed={3}
-        pageCount={555}
+        pageCount={NbrTotalPages}
         previousLabel={<span className='w-5 h-5 md:h-8 md:w-8 border-2 flex items-center justify-center rounded-md bg-gray-200  '>
         <FaChevronLeft/>
     </span>}

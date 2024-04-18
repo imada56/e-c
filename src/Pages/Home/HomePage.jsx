@@ -7,17 +7,17 @@ import ContinerProductCard from '../../component/Products/ContinerProductCard'
 import ContinerMarqueCard from '../../component/Marque/ContinerMarqueCard'
 import Footer from '../../component/Uitily/Footer'
 
-function HomePage() {
+function HomePage({tb}) {
   return (
     <div className='' >
        
        <Slider/>
       <div className='w-[85%] container m-auto'>
        <HomeCategory/>
-       <ContinerProductCard Produits={'Produits'} Ajouter={'Ajouter'}/>
-       <ContinerProductCard Produits={'Le plus éloquent'} Ajouter={'Ajouter'}/>
+       <ContinerProductCard tb={tb} Produits={'Produits'} Ajouter={'Ajouter'}/>
+       <ContinerProductCard tb={tb} Produits={'Le plus éloquent'} Ajouter={'Ajouter'}/>
        <DivPublicite/>
-       <ContinerProductCard Produits={'Offre spéciale'} Ajouter={'Ajouter'}/>
+       <ContinerProductCard tb={tb} Produits={'Offre spéciale'} Ajouter={'Ajouter'}/>
        <ContinerMarqueCard Produits={'Marque'} Ajouter={'Ajouter'}/>
        
       </div>

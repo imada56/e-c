@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { data } from '../../Data/ProduitData';
+import { DataCategoryHome } from '../../Data/ProduitData';
 import CardCategory from '../../component/Category/CardCategory';
 import Pagination from '../../component/Uitily/Pagination';
 
 function AllCategoryPage() {
-  const [tableau,serTableau]=useState(data);
+  const [tableau,setTableau]=useState(DataCategoryHome);
   return (
     <section className='container min-h-[420px]'>
     <div className='w-[80%] m-auto mt-20'>
