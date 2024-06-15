@@ -10,7 +10,7 @@ import 'swiper/css/scrollbar';
 
 function Slider() {
   return (
-    <div className='mt-8'>
+    <div className='mt-5'>
         <Swiper 
        modules={[Navigation, Pagination, Scrollbar, A11y]}
        spaceBetween={50}

@@ -1,27 +1,41 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-function ProductCard({imgs}) {
+import {FaHeart}from 'react-icons/fa'
+import imgv  from '../../Assets/Images/Vector.png'
+import imgv1  from '../../Assets/Images/Vector1.png'
+function ProductCard({imgs ,titlePrdct}) {
   return (
-  <Link to={'/DetailDuProduit'}> <div className='h-56 shadow-black shadow-lg rounded-xl bg-white md:w-48 '>
-    <div className='h-[55%]  '>
-      <img className='h-full ml-7 w-fit ' src={imgs}/>
+  <Link to={'/DetailDuProduit'}> <div className='max-h-56 min-h-56  shadow-black flex flex-col bg-[#F5F5F5] items-center justify-center shadow-md rounded-xl  w-[90%] md:w-[80%] xl:w-[70%]  '>
+    <div className='h-[120px]  flex items-center justify-center  w-[80%] '>
+      <img className='h-[80%] object-fill' src={imgs}/>
     </div>
-    
-        <i>
-         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-           <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-         </svg>
-
-        </i>
-        <p className='pl-2 font-serif text-black'>Lorem ipsum dolor sit amet consectet
+           
+        <div className='h- w-[100%] px-3 py-1 flex flex-col justify-around'>
+        <FaHeart className='hover: text-red-400   text-2xl'/>
+        <p className=' font-semibold text-sm   '>{titlePrdct}
         </p>
-        <div className='px-2 flex flex-row justify-between text-yellow-500'>
-            <p>546$</p>
-            <p>*3.3</p>
+        <div className=' flex flex-row justify-between text-red-500'>
+            <p className=''>546$</p>
+            <div className='flex gap-1 items-center text-xs'>
+      <img src={imgv} alt="" />
+      <img src={imgv} alt="" />
+      <img src={imgv} alt="" />
+      <img src={imgv1} alt="" />
+      {/* <p>(150 Reviews0)</p>
+      <p className='border-l-2 border-black pl-1 text-green-400'> In Stock</p> */}
+            </div> 
         </div>
-    
+        </div>
+    {/* <div className='flex gap-1 items-center text-xs'>
+      <img src={imgv} alt="" />
+      <img src={imgv} alt="" />
+      <img src={imgv} alt="" />
+      <img src={imgv1} alt="" />
+      <p>(150 Reviews0)</p>
+      <p className='border-l-2 border-black pl-1 text-green-400'> In Stock</p>
+       </div> */}
 </div></Link> 
+
   )
 }
 

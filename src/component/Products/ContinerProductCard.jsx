@@ -4,21 +4,21 @@ import ProductCard from './ProductCard'
 import SubTitle from '../Uitily/SubTitle'
 import { DataProduit } from '../../Data/ProduitData';
 
-function ContinerProductCard({tb,Produits,Ajouter,y}) {
+function ContinerProductCard({tb,Produits,Ajouter,y,titlePrdct}) {
   //const [tableau,serTableau]=useState(DataProduit);
 
   return (
-    <section>
+    <section className=' my-4 p-2'>
      <SubTitle title={Produits} btnTitle={Ajouter} path={'allProductsPage'}/>
-     <div className=' container m-auto py-6 pl-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+     <div className=' container m-auto py-6 pl-6 grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 '>
                       {tb.map((i)=>(
                         
                         y ?(
                           
-                          <ProductCard key={i.id} imgs={i.imgs}/>
+                          <ProductCard  titlePrdct={i.titel} key={i.id} imgs={i.imgs}/>
                             ): 
                             (i.id< 5 ? ( 
-                          <ProductCard key={i.id} imgs={i.imgs}/>
+                          <ProductCard titlePrdct={i.titel} key={i.id} imgs={i.imgs}/>
                           ):null
                           )
                       ))}

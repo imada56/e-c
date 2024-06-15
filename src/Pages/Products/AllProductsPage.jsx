@@ -11,7 +11,7 @@ function AllProductsPage({categorie,data,tb,fct}) {
  
   
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-screen mt-[140px] '>
          <AllCategory categorie={categorie} fct={onFilter}/>
          <NmbrProduitSearch/>
          <div className='m-5 grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 grid-flow-row-dense'>

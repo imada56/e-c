@@ -6,7 +6,7 @@ import Pagination from '../../component/Uitily/Pagination';
 function AllCategoryPage() {
   const [tableau,setTableau]=useState(DataCategoryHome);
   return (
-    <section className='container min-h-[420px]'>
+    <section className='container min-h-[420px] mt-[140px]'>
     <div className='w-[80%] m-auto mt-20'>
 
  

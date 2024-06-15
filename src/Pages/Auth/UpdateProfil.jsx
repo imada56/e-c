@@ -37,7 +37,7 @@ function UpdateProfil() {
               })
      }
   return (
-    <section className='min-h-[320px]' >
+    <section className='min-h-[320px] mt-[140px]' >
 
     <form className='container m-auto mt-24 border-2 border-sky-600 h-64 w-96 flex flex-col justify-around items-center ' onSubmit={handleSubmit}>
       <label htmlFor="" className='font-medium text-sky-800  text-2xl '>Updat Profil</label>
