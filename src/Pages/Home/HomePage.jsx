@@ -7,8 +7,18 @@ import ContinerProductCard from '../../component/Products/ContinerProductCard'
 import ContinerMarqueCard from '../../component/Marque/ContinerMarqueCard'
 import Footer from '../../component/Uitily/Footer'
 import {FaCaretRight ,FaCaretUp ,FaUser}from 'react-icons/fa'
+import SubTitle from '../../component/Uitily/SubTitle'
+import attractive_woman from '../../Assets/Images/attractive_woman.png'
+import amazon_gucci from '../../Assets/Images/amazon-gucci.png'
+import amazon_png1 from '../../Assets/Images/amazon-png1.png'
+import pes5 from '../../Assets/Images/pes5.png'
+import icon_shop  from '../../Assets/Images/vector/icon_shop.png'
+import icon_moneybag from '../../Assets/Images/vector/Icon-Moneybag.png'
+import icon_shopping_bag  from '../../Assets/Images/vector/Icon-Shopping bag.png'
 
-function HomePage({tb1,tb2,titlePrdct}) {
+
+
+function HomePage({tb1,tb2,tb3,titlePrdct}) {
   return (
     <div className='' >
         
@@ -33,12 +43,87 @@ function HomePage({tb1,tb2,titlePrdct}) {
         
         <Slider/>
        <HomeCategory/>
-       <ContinerProductCard  titlePrdct={titlePrdct} tb={tb1} Produits={'Produits'} Ajouter={'Ajouter'}/>
-       <ContinerProductCard titlePrdct={titlePrdct} tb={tb1} Produits={'Best Selling Products'} Ajouter={'Ajouter'}/>
+       <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb1} Produits={'Produits :'} Ajouter={'Ajouter'}/>
+       <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb1} Produits={'Best Selling Products :'} Ajouter={'Ajouter'}/>
        <DivPublicite/>
-       <ContinerProductCard titlePrdct={titlePrdct} tb={tb1} Produits={'Offre spéciale'} Ajouter={'Ajouter'}/>
+       <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb1} Produits={'Offre spéciale :'} Ajouter={'Ajouter'}/>
        <ContinerMarqueCard tb={tb2}  Produits={'Marque'} Ajouter={'Ajouter'}/>
-       
+        <div>
+          <SubTitle title='New Arrival'/>
+          <div className=' flex gap-2 min-h-[300px] justify-center'>
+            <div className='bg-black w-[50%] relative px-2' >
+              <img className='' src={pes5} alt="" />
+              <div className='absolute bottom-1'>
+                <h1 className='text-white text-base md:text-lg '>PlayStation 5</h1>
+                <p className='text-white text-xs md:text-sm '>Black and White version of the PS5 coming out on sale.</p>
+                <a  className='text-white text-sm md:text-base  underline' href="">Shop Now</a>
+              </div>
+            </div>
+            <div className=' w-[33%] flex flex-col gap-2  '>
+              
+              <div className=' bg-[#0D0D0D] px-2 w-[100%]  md:h-[46%] flex relative'>
+                <div className='absolute bottom-1 w-[40%] '>
+                <h1 className='text-white text-base font-semibold '> Women’s Collections</h1>
+                <p className='text-white text-xs '>Featured woman collections that give you another vibe.</p>
+                <a className='text-white text-sm underline' href="">Shop Now</a>
+                </div>
+              <img className='h-[100%] w-[100%] object-contain ' src={attractive_woman} alt="" />     
+              </div>
+              <div className=' flex flex-col md:flex-row gap-2 md:w-[100%] h-[51%]'>
+              
+              <div className=' bg-[#000000] min-w-[135px] w-[50%] flex relative px-1 '>
+                <div className='absolute bottom-1 w-[70%]  '>
+                <h1 className='text-white text-xs md:font-semibold '>Amazon wireless speakers </h1>
+                <p className='text-white text-xs  '>GUCCI INTENSE OUD EDP</p>
+                <a className='text-white text-xs nd:text-sm underline' href="">Shop Now</a>
+                </div>
+                <img className='h-[70%] w-[70%] object-contain mt-6 ml-8 ' src={amazon_gucci} alt="" />
+              </div>
+              
+              <div className=' bg-[#000000] min-w-[135px] w-[50%] flex relative px-1 '>
+               <div className='absolute bottom-1 w-[70%] '>
+               <h1 className=' md:text-base text-white text-base font-semibold '> Speakers</h1>
+                <p className='text-white text-xs  md:text-xs '>Amazon wireless speakers</p>
+                <a className='text-white text-sm underline' href="">Shop Now</a>
+               </div>
+                <img className='h-[70%] w-[70%] object-contain mt-6 ml-8 ' src={amazon_png1} alt="" />
+              </div>
+              </div>
+            </div>
+
+          </div>
+          <div className=' w-[100%] mt-32  container m-auto px-6  flex justify-around  '>
+           
+           <div className='  p-4 flex flex-col justify-around items-center'>
+               <div className='w-[50px] h-[50px] flex justify-center items-center bg-gray-400  rounded-full'>
+               <div className='w-[40px] h-[40px] flex justify-center items-center bg-black  rounded-full' >
+                   <img  className='object-contain  h-[80%] w-[80%]' src={icon_shop} alt="" />
+               </div>
+               </div>
+               <h2 className='font-semibold text-base md:text-xl'>FREE AND FAST DELIVERY </h2>
+               <p className='text-xs'>Free delivery for all orders over $140</p>
+           </div>
+           <div className='   p-4 flex flex-col justify-around items-center'>
+               <div className='w-[50px] h-[50px] flex justify-center items-center bg-gray-400  rounded-full'>
+               <div className='w-[40px] h-[40px] flex justify-center items-center bg-black rounded-full' >
+                   <img  className='object-contain  h-[80%] w-[80%]' src={icon_moneybag} alt="" />
+               </div>
+               </div>
+               <h2 className='font-semibold text-base md:text-xl'>24/7 CUSTOMER SERVICE</h2>
+               <p className='text-xs'>Friendly 24/7 customer support</p>
+           </div>
+           <div className='  p-4 flex flex-col justify-around items-center'>
+               <div className='w-[50px] h-[50px] flex justify-center items-center bg-gray-400 rounded-full'>
+               <div className='w-[40px] h-[40px] flex justify-center items-center bg-black rounded-full' >
+                   <img  className='object-contain  h-[80%] w-[80%]' src={icon_shopping_bag} alt="" />
+               </div>
+               </div>
+               <h2 className='font-semibold text-base md:text-xl'>MONEY BACK GUARANTEE</h2>
+               <p className='text-xs'>We reurn money within 30 days</p>
+           </div>
+          
+       </div>
+        </div>
       </div>
       
     </div>

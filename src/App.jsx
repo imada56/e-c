@@ -15,7 +15,7 @@ import NevbarLogin from './component/Uitily/NevbarLogin.jsx';
 import NouvelleInscription from './Pages/Auth/NouvelleInscription.jsx';
 import AllCategoryPage from './Pages/Category/AllCategoryPage.jsx';
 import AllProductsPage from './Pages/Products/AllProductsPage.jsx';
-import { DataMarque, DataProduit } from './Data/ProduitData.jsx';
+import { DataMarque, DataProduit, DataProduitPlus } from './Data/ProduitData.jsx';
 import { ValueConntext } from './component/Context.jsx';
 import {AuthProvider} from './ContexAuth/ContexAuth.jsx';
 import Compts from './Pages/Auth/Compts.jsx';
@@ -28,34 +28,32 @@ import CheckOut from './Pages/CheckOut/CheckOut.jsx';
 import About from './Pages/About/About.jsx';
 import Footer2 from './component/Uitily/Footer2.jsx';
 import Contact from './Pages/Contact/Contact.jsx';
+import { useSelector } from 'react-redux';
+import Wishlist from './Pages/Wishlist/Wishlist.jsx';
 
 
 
 
 function App() {
-  
+  const {imgs} =useSelector(state =>state.Liked)
   const {data,onChange} = useContext(ValueConntext)
- 
  const v=data[0];
  const mot=data[1];
  
-   console.log('nbr ttttttt = '+ v);
- 
+  //console.log('nbr ttttttt = '+ v);
    const [filtr ,setFiltr]=useState(DataProduit[v]);
    const [filtrMq ,setFiltrMq]=useState(DataMarque[v]);
-  //  const [TitleP ,setTitleP]=useState(DataProduit[1]);
+  //const [TitleP ,setTitleP]=useState(DataProduit[1]);
    const TitlePrdct=[DataProduit[1].map((i)=>(i.titel))]
    const tblCategorie =['touts', ...new Set(DataProduit[v].map((i)=>(i.categorie)))];
    const tblCategorieMq =['touts', ...new Set(DataMarque[v].map((i)=>(i.categorie)))];
-   console.log(tblCategorie)
-  
-   
-   //console.log('ana '+DataProduit[v])
+  //console.log(tblCategorie)
+  //console.log('ana '+DataProduit[v])
 
    
    useEffect(() => {
    setFiltr(DataProduit[v]);
-   console.log(filtr)
+  //  console.log(filtr)
    setFiltrMq(DataMarque[v]);
   }, [v]);
   
@@ -65,7 +63,8 @@ function App() {
        setFiltr(newTab);
        const newTabMq =(DataMarque[v].filter((j)=>(j.categorie.includes(word.toLowerCase()))))
        setFiltrMq(newTabMq);
-      console.log('imadou')}else{
+      // console.log('imadou')
+    }else{
         setFiltr(DataProduit[v])
         setFiltrMq(DataMarque[v])
       }
@@ -81,10 +80,6 @@ function App() {
   //console.log('newTb de'+DataProduit[v])
 //const imgss= 'iphone-2.png';
 
-  
-
- 
-
   return (
     <div className="">
       
@@ -93,8 +88,8 @@ function App() {
         <AuthProvider>
         <Routes>
          
-         <Route index element={<HomePage titlePrdct={TitlePrdct} tb1={filtr}  tb2={filtrMq}/>}></Route>
-         <Route path='/detailDuProduit'element={<DetailDuProduit imgs={'pc-2.webp'} />}></Route> 
+         <Route index element={<HomePage titlePrdct={TitlePrdct} tb1={filtr} tb3={DataProduitPlus} tb2={filtrMq}/>}></Route>
+         <Route path='/detailDuProduit'element={<DetailDuProduit imgs={imgs} />}></Route> 
          <Route path='/login'element={<Login imgs={'pc-2.webp'} />}></Route> 
          <Route path='/compts'
            element={<RequireAuth><Compts/></RequireAuth>}>
@@ -110,6 +105,8 @@ function App() {
          <Route path='/checkOut'element={<CheckOut/>}></Route>
          <Route path='/about'element={<About/>}></Route>
          <Route path='/contact'element={<Contact/>}></Route>
+         <Route path='/wishlist'element={<Wishlist/>}></Route>
+         
          
         </Routes>    
                      

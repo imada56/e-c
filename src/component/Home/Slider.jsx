@@ -1,6 +1,6 @@
 import React from 'react'
 import image from '../../Data/SliderImg'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -9,20 +9,23 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 function Slider() {
+  
   return (
-    <div className='mt-5'>
+    <div className='mt-5 w-[80%] container m-auto'>
         <Swiper 
-       modules={[Navigation, Pagination, Scrollbar, A11y]}
-       spaceBetween={50}
+       modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
+       spaceBetween={20}
        slidesPerView={1}
        navigation
-       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+       autoplay={{delay:1000}}
+       //pagination={{ clickable: true }}
+      // scrollbar={{ draggable: true }}
       
     >
       {image.map((img)=>(
       <div className=''>
-       <SwiperSlide ><img src={img} className='h-[220px] w-[100%]  object-cover' /></SwiperSlide> 
+       <SwiperSlide className=' ' ><img src={img} className=' h-[220px]  object-cover w-[100%]' />
+       </SwiperSlide> 
        
       </div>
     )) }

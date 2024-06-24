@@ -1,6 +1,6 @@
 import React, {useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import {FaCartPlus,FaAlignCenter ,FaFontAwesomeAlt ,FaSearch,FaCaretDown,FaCaretUp ,FaUser,FaBars}from 'react-icons/fa'
+import {FaCartPlus,FaAlignCenter ,FaFontAwesomeAlt ,FaSearch,FaCaretDown,FaCaretUp ,FaUser,FaBars, FaHeart}from 'react-icons/fa'
 import { useRef } from 'react'
 import { ValueConntext } from '../Context'
 import { useState } from 'react'
@@ -13,11 +13,7 @@ function NevbarLogin({fct_rech}) {
   const [isOpen,setIsOpen]=useState(false);
   const [a,setA]=useState(false);
   useEffect(()=>{
-    
-    
-    
-
-    window.addEventListener('scroll',()=>{
+  window.addEventListener('scroll',()=>{
       
       // if(window.screenX>700){
       //   btn.current.style.opacity ='0';
@@ -119,7 +115,8 @@ function NevbarLogin({fct_rech}) {
               
             <Link className='mx-5 underline  gap-1 text-xl cursor-pointer' to={'/login'}>
               <FaUser className='mt-1'/>  </Link>
-            
+              <Link className='mx-5 underline  gap-1 text-xl cursor-pointer' to={'/wishlist'}>
+              <FaHeart className='mt-1'/>  </Link>
               <Link className='underline  text-xl cursor-pointer' to={'/cartPage'}>
             <FaCartPlus className='mt-1'/>  </Link>
             

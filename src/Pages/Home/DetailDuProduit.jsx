@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import img63  from '../../Assets/Images/image 63.png'
 import img57  from '../../Assets/Images/image 57.png'
 import img58  from '../../Assets/Images/image 58.png'
@@ -7,7 +7,21 @@ import img61  from '../../Assets/Images/image 61.png'
 import imgv  from '../../Assets/Images/Vector.png'
 import imgv1  from '../../Assets/Images/Vector1.png'
 import {FaElementor}from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 function DetailDuProduit({imgs}) {
+  const [count ,setCount]=useState(0)
+  const handelclikdecrement = ()=>{
+    if(count>0){setCount(count-1);}
+    
+  }
+
+  const handelclikincrement = ()=>{
+    setCount(count+1);
+  }
+
+
+
   return (
     <section className='  mt-[140px] '>
     <div className='container m-auto   w-[75%] flex flex-col md:flex-row gap-2  md:h-[400px]'>
@@ -18,8 +32,10 @@ function DetailDuProduit({imgs}) {
       <div className='bg-[#F5F5F5] h-[25%] flex items-center justify-center'><img className='h-[80%] w-[70%] object-fill   ' src={img59} alt="" /></div>
       <div className='bg-[#F5F5F5] h-[25%] flex items-center justify-center'><img className='h-[80%] w-[70%] object-fill   ' src={img61} alt="" /></div>
     </div>
-    <div className='bg-[#F5F5F5] flex items-center  w-[74%] '>
-      <div className='flex items-center justify-center'><img className='object-fill w-[85%]' src={img63} alt="" /></div>
+    <div className='bg-[#F5F5F5] flex items-center justify-center w-[74%] '>
+      <div className='flex items-center justify-center h-[85%]  w-[85%] '>
+        <img className='object-fill w-[85%]' src={imgs} alt="" />
+      </div>
     </div>
     </div>
     <div className=' md:w-[45%] flex flex-col gap-2 '>
@@ -62,11 +78,13 @@ function DetailDuProduit({imgs}) {
             </div>
     <div className='flex justify-around my-2 px-3  items-center ' >
 <div className='flex  border-2 border-black'>
-  <button className='border-r-2 border-black h-8 w-8 hover:text-white hover:bg-[#DB4444]'>+</button>
-  <div className='h-8 w-16 flex justify-center items-center ' >2</div>
-  <button className=' border-l-2 border-black h-8 w-8 hover:text-white hover:bg-[#DB4444]'>-</button>
+  <button onClick={()=>handelclikincrement()} className='border-r-2 border-black h-8 w-8 hover:text-white hover:bg-[#DB4444]'>+</button>
+  <div className='h-8 w-16 flex justify-center items-center ' >{count}</div>
+  <button  onClick={()=>handelclikdecrement()} className=' border-l-2 border-black h-8 w-8 hover:text-white hover:bg-[#DB4444]'>-</button>
 </div>
-<div className='h-8 w-32 flex justify-center items-center text-white bg-[#DB4444]'>Buy Now</div>
+<Link className='' to={'/cartPage'}>
+         <div className='h-8 w-32 flex justify-center items-center text-white bg-[#DB4444]'>Buy Now</div>
+</Link>
 <FaElementor/>
     </div>
     

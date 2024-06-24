@@ -31,6 +31,20 @@ export const DataCategoryHome=[
     {id:'3',imgs:tv,bg:'#FF0000'},
     {id:'4',imgs:sac,bg:'#00CC00'},
     ]
+
+    export const DataProduitPlus=[
+        {id:'1',categorie:'sindwiche',imgs:p7,titel:'sindwich',prxi:'75 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
+        {id:'2',categorie:'pizza',imgs:clavie,titel:'pizza napolitiane',prxi:'1500 $',dscr:'Rerum modi id neque illum Lneque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+        {id:'3',categorie:'pizza',imgs:imag63,titel:'pizza tomate',prxi:'400 $',dscr:'quos voluptatibus sit, fuga ducimus, quis nihil aspernatur! voluptate pariatur, quos voluptatib Lorem ipsum dolor sit amet consectetur adipisi illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+        {id:'4',categorie:'cofee',imgs:p4,titel:'cofee',prxi:'75 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
+        {id:'5',categorie:'jus',imgs:p3,titel:'jus',prxi:'150 $',dscr:'dipisicing Lorem met consectetur a elit. Rerum modi id neque illuma ducimus, quis nihil aspernatur!'},
+        {id:'6',categorie:'sindwiche',imgs:p2,titel:'sindwiche',prxi:'599 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
+        {id:'7',categorie:'pizza',imgs:p1,titel:'pizza simple',prxi:'250 $',dscr:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum modi id neque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+        {id:'8',categorie:'pizza',imgs:p2,titel:'pizza napolitiane',prxi:'1500 $',dscr:'Rerum modi id neque illum Lneque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+        {id:'9',categorie:'pizza',imgs:p3,titel:'pizza tomate',prxi:'400 $',dscr:'quos voluptatibus sit, fuga ducimus, quis nihil aspernatur! voluptate pariatur, quos voluptatib Lorem ipsum dolor sit amet consectetur adipisi illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+        // {id:'0',categorie:'pizza',imgs:p8,titel:'pizza simple',prxi:'250 $',dscr:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum modi id neque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+       
+        ]
 export const DataProduit={
     1:[ 
         {id:'1',categorie:'phone',imgs:bureau,titel:'HAVIT HV-G92 Gamepad',prxi:'599 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
@@ -44,14 +58,14 @@ export const DataProduit={
         
     ],
     2:[ 
-        {id:'0',categorie:'pizza',imgs:p8,titel:'pizza simple',prxi:'250 $',dscr:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum modi id neque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
-        {id:'1',categorie:'sindwiche',imgs:p7,titel:'sindwich',prxi:'75 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
-        {id:'2',categorie:'pizza',imgs:clavie,titel:'pizza napolitiane',prxi:'1500 $',dscr:'Rerum modi id neque illum Lneque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
-        {id:'3',categorie:'pizza',imgs:imag63,titel:'pizza tomate',prxi:'400 $',dscr:'quos voluptatibus sit, fuga ducimus, quis nihil aspernatur! voluptate pariatur, quos voluptatib Lorem ipsum dolor sit amet consectetur adipisi illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
-        {id:'4',categorie:'cofee',imgs:p4,titel:'cofee',prxi:'75 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
-        {id:'5',categorie:'jus',imgs:p3,titel:'jus',prxi:'150 $',dscr:'dipisicing Lorem met consectetur a elit. Rerum modi id neque illuma ducimus, quis nihil aspernatur!'},
-        {id:'6',categorie:'sindwiche',imgs:p2,titel:'sindwiche',prxi:'599 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
-        {id:'7',categorie:'pizza',imgs:p1,titel:'pizza simple',prxi:'250 $',dscr:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum modi id neque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+        {id:'13',categorie:'pizza',imgs:p8,titel:'pizza simple',prxi:'250 $',dscr:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum modi id neque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+        {id:'14',categorie:'sindwiche',imgs:p7,titel:'sindwich',prxi:'75 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
+        {id:'15',categorie:'pizza',imgs:clavie,titel:'pizza napolitiane',prxi:'1500 $',dscr:'Rerum modi id neque illum Lneque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+        {id:'16',categorie:'pizza',imgs:imag63,titel:'pizza tomate',prxi:'400 $',dscr:'quos voluptatibus sit, fuga ducimus, quis nihil aspernatur! voluptate pariatur, quos voluptatib Lorem ipsum dolor sit amet consectetur adipisi illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
+        {id:'17',categorie:'cofee',imgs:p4,titel:'cofee',prxi:'75 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
+        {id:'18',categorie:'jus',imgs:p3,titel:'jus',prxi:'150 $',dscr:'dipisicing Lorem met consectetur a elit. Rerum modi id neque illuma ducimus, quis nihil aspernatur!'},
+        {id:'19',categorie:'sindwiche',imgs:p2,titel:'sindwiche',prxi:'599 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
+        {id:'20',categorie:'pizza',imgs:p1,titel:'pizza simple',prxi:'250 $',dscr:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum modi id neque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
         {id:'8',categorie:'pizza',imgs:p2,titel:'pizza napolitiane',prxi:'1500 $',dscr:'Rerum modi id neque illum Lneque illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
         {id:'9',categorie:'pizza',imgs:p3,titel:'pizza tomate',prxi:'400 $',dscr:'quos voluptatibus sit, fuga ducimus, quis nihil aspernatur! voluptate pariatur, quos voluptatib Lorem ipsum dolor sit amet consectetur adipisi illum mollitia molestias voluptate pariatur, quos voluptatibus sit, fuga ducimus, quis nihil aspernatur!'},
         {id:'10',categorie:'sindwiche',imgs:p4,titel:'sindwich',prxi:'75 $',dscr:'voluptate pariatur, quos voluptatibus sit Lorem ipsum dolor sit am. mollitia molestias , fuga ducimus, quis nihil aspernatur!'},
