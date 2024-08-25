@@ -52,7 +52,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     dispatch(addArrayImg({ arrayImg }));
     dispatch(addId({ id }));
   }; 
-  console.log('je suis la ')
+ 
   
  
   //console.log('reeeeeeeererererre ',x)

@@ -27,7 +27,7 @@ const ContinerProductCard: React.FC<ContinerProductCardProps> = ({
   w
 }) => {
 
-  console.log('tb=',tb)
+  
   return (
     <section className='my-4 p-2 mt-32'>
        <SubTitle title={Produits} btnTitle={Ajouter} path={'allProductsPage'} /> 

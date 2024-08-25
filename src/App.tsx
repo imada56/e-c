@@ -30,10 +30,11 @@ import NevbarLogin from './component/Uitily/NevbarLogin';
 
 
 
+
 //const marque= UseFirebase();
 
 
-const Expl: React.FC = () => {
+const App: React.FC = () => {
     const prudact= useFirebase();
     const marque = useFirebase();
     
@@ -119,8 +120,9 @@ const Expl: React.FC = () => {
 
   return (
     <div>
+         
         <BrowserRouter>
-
+       
         <NevbarLogin fct_rech={onRecherch}/>
        {/* <ContinerProductCard w={'nn'} titlePrdct={'imad'} tb={filtr} Produits={'Produits :'} Ajouter={'Ajouter'}/>
       */}
@@ -155,4 +157,4 @@ const Expl: React.FC = () => {
   );
 };
 
-export default Expl;
+export default App;

@@ -40,6 +40,8 @@ const Cart: React.FC<CartProps> = ({ Products }) => {
     return Total;
   };
 
+  const dispatch = useDispatch();
+  
   const T = getTotale(products);
   const Total = T + Shipping;
 
@@ -61,7 +63,7 @@ const Cart: React.FC<CartProps> = ({ Products }) => {
     });
   }, [products]);
 
-  const dispatch = useDispatch();
+ 
   dispatch(subTotal({ stotal }));
 
   return (

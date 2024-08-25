@@ -14,6 +14,8 @@ import { Product } from '@/Firebase/types'
 import Slider from '../../component/Home/Slider'
 import HomeCategory from '../../component/Home/HomeCategory'
 import DivPublicite from '../../component/Home/DivPublicite'
+import ContinerMarqueCard from '../../component/Marque/ContinerMarqueCard'
+import { useTranslation } from 'react-i18next'
 
 
 
@@ -34,6 +36,7 @@ const HomePage:React.FC<HomePageProps>= ({
   titlePrdct
 }) => {
   //console.log('tb1 ==',tb1)
+  const {t,i18n}=useTranslation();
   return (
     <div className='' >
         
@@ -41,15 +44,15 @@ const HomePage:React.FC<HomePageProps>= ({
         <div className='w-[100%] flex   gap-4  justify-end  '>
         <div className='w-[30%] flex flex-col gap-4 justify-center border-r-2 px-1 py-5 min-w-[150px] md:px-6 '> 
             <div className=' flex flex-col gap-3 md:px-3    md:py-3'>
-            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm inline-flex gap-6'>Woman’s Fashion <FaCaretRight className='mt-1'/></p>
-            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm inline-flex gap-6'>Men’s Fashion <FaCaretRight className='mt-1'/></p>
-            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm inline-flex gap-6'>Electronics <FaCaretRight className='mt-1'/></p>
-            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>Home & Lifestyle</p>
-            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>Medicine</p>
-            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>Sports & Outdoor</p>
-            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>Baby’s & Toys</p>
-            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>Groceries & Pets</p>
-            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>Health & Beauty</p>
+            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm inline-flex gap-6'>{t("Woman’s Fashion")} <FaCaretRight className='mt-1'/></p>
+            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm inline-flex gap-6'>{t("Men’s Fashion")} <FaCaretRight className='mt-1'/></p>
+            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm inline-flex gap-6'>{t("Electronics")} <FaCaretRight className='mt-1'/></p>
+            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>{t("Home & Lifestyle")}</p>
+            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>{t("Medicine")}</p>
+            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>{t("Sports & Outdoor")}</p>
+            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>{t("Baby’s & Toys")}</p>
+            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>{t("Groceries & Pets")}</p>
+            <p className='text-xs hover:font-semibold hover:scale-105 transition-all duration-100 cursor-pointer md:text-sm'>{t("Health & Beauty")}</p>
             </div>
             
         </div>
@@ -60,10 +63,10 @@ const HomePage:React.FC<HomePageProps>= ({
         <HomeCategory/> 
        <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb1} Produits={'Produits :'} Ajouter={'Ajouter'}/>
        <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb3} Produits={'Best Selling Products :'} Ajouter={'Ajouter'}/>
-       {/* <DivPublicite/> */}
+       <DivPublicite/>
        <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb1} Produits={'Offre spéciale :'} Ajouter={'Ajouter'}/>
-       {/* <ContinerMarqueCard tb={tb2}  Produits={'Marque'} Ajouter={'Ajouter'}/>
-         */}
+       <ContinerMarqueCard tb={tb2}  Produits={'Marque'} Ajouter={'Ajouter'}/>
+        
         <div className=''>
           <SubTitle title='New Arrival'  path={'allProductsPage'}/>
           <div className=' flex gap-2 min-h-[300px] justify-center'>

@@ -8,7 +8,7 @@ interface ContinerMarqueCardProps {
   tb: Marque[];
   Produits: string;
   Ajouter: string;
-  y: string;
+  y?: string;
 }
 
 const ContinerMarqueCard: React.FC<ContinerMarqueCardProps> = ({ tb, Produits, Ajouter, y }) => {

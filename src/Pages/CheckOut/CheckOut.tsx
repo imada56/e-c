@@ -6,20 +6,17 @@ import img32 from '../../Assets/Images/image 32.png';
 import img33 from '../../Assets/Images/image 33.png';
 import g1 from '../../Assets/Images/g1.png';
 import g2 from '../../Assets/Images/g2.png';
+import { Product } from '../../Firebase/types';
 
 interface CheckoutProps {
-  Products: {
-    id: string;
-    title?: string;
-    imgs?: string;
-  }[];
+  Products: Product[];
 }
 
 const CheckOut: React.FC<CheckoutProps> = ({ Products }) => {
   const { TabCart, stotal } = useSelector((state: any) => state.Liked);
 
   const ArrayCart = Products.filter((item) => TabCart.includes(item.id));
-
+  
   return (
     <section className='min-h-[320px] mt-[140px]'>
       <div className='container m-auto'>
@@ -91,22 +88,22 @@ const CheckOut: React.FC<CheckoutProps> = ({ Products }) => {
                     <img className='object-contain h-[20%]' src={item.imgs} alt='' />
                     <p className='text-xs'>{item.title}</p>
                   </div>
-                  <p className='text-sm md:text-base'>${stotal[index].subTotal}</p>
+                  <p className='text-sm md:text-base'>${stotal.subTotal[index]}</p>
                 </div>
               ))}
             </div>
             <div className='flex flex-col justify-around py-2 h-[20%] text-sm md:text-base'>
               <div className='flex justify-between w-[100%] px-2 border-b-2 border-black'>
                 <p>Subtotal</p>
-                <p className='text-red-500'>${stotal[0].Total}</p>
+                <p className='text-red-500'>${stotal.Total}</p>
               </div>
               <div className='flex justify-between w-[100%] px-2 border-b-2 border-black'>
                 <p>Shipping:</p>
-                <p className='text-red-500'>${stotal[0].Shipping}</p>
+                <p className='text-red-500'>${stotal.Shipping}</p>
               </div>
               <div className='flex justify-between w-[100%] px-2'>
                 <p>Total:</p>
-                <p className='text-green-600'>${stotal[0].Total + stotal[0].Shipping}</p>
+                <p className='text-green-600'>${stotal.Total + stotal.Shipping}</p>
               </div>
             </div>
             <div className='h-[5%] items-center px-2 flex justify-between'>
@@ -137,9 +134,9 @@ const CheckOut: React.FC<CheckoutProps> = ({ Products }) => {
                 Apply Coupon
               </button>
             </div>
-            <button className='md:w-[40%] mx-2 text-sm md:text-base px-2 py-2 border-2 text-white bg-red-500'>
-              Apply Coupon
-            </button>
+            {/* <button className='md:w-[40%] mx-2 text-sm md:text-base px-2 py-2 border-2 text-white bg-red-500'>
+              Apply Coupon 
+            </button> */}
           </div>
         </div>
       </div>
