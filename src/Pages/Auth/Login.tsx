@@ -46,7 +46,7 @@ const Login: React.FC<LoginProps>=({imgs})=> {
     {error && <h1 className='text-red-500'>{error}</h1>}
     <input ref={emailRef} className=' h-7 w-[80%] border-b-2 border-black cursor-text text-center'type="email" placeholder=' Email ' />
     {/* <label className=' font-black  text-base  '>Password : </label> */}
-    <input ref={passwordRef} className='  h-7 w-[80%] border-b-2 border-black cursor-text text-center' type="password" placeholder='Mot De Passe'/>
+    <input ref={passwordRef} className='  h-7 w-[80%] border-b-2 border-black cursor-text text-center' type="password" placeholder='Password'/>
     <button type='submit' disabled={loading}  className=' py-1 text-white cursor-pointer border-2 px-2 bg-sky-600 border-sky-600 rounded-lg'>connected</button>
     
     <Link className='text-blue-300 underline font-serif cursor-pointer ' to={'/forgot_password'}>Forgot Password

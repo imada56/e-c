@@ -51,17 +51,17 @@ function NouvelleInscription() {
         <div className='md:w-[35%] md:static absolute'>
           <form className='container m-auto mt-24 h-64 w-96 flex flex-col justify-around items-center ' onSubmit={handleSubmit}>
             <label htmlFor='' className='font-medium text-black text-2xl'>
-              Nouveau Compte
+              New Account
             </label>
             {error && <h1 className='text-red-500'>{error}</h1>}
             <input ref={emailRef} className='h-7 w-[80%] cursor-text text-center border-black border-b-2' type='email' placeholder='Email' />
-            <input ref={passwordRef} className='h-7 w-[80%] cursor-text text-center border-black border-b-2' type='password' placeholder='Mot De Passe' />
-            <input ref={confirmPasswordRef} className='h-7 w-[80%] cursor-text text-center border-black border-b-2' type='password' placeholder='Confirme le Mot De Passe' />
+            <input ref={passwordRef} className='h-7 w-[80%] cursor-text text-center border-black border-b-2' type='password' placeholder='Password' />
+            <input ref={confirmPasswordRef} className='h-7 w-[80%] cursor-text text-center border-black border-b-2' type='password' placeholder='Confirm Password' />
             <button type='submit' disabled={loading} className='py-2 w-[80%] text-white bg-red-600 cursor-pointer border-2 px-2'>
-              S'inscrire
+             Register
             </button>
             <button type='button' disabled={loading} className='py-2 w-[80%] text-black text-sm cursor-pointer border-2 px-2'>
-              <FaGoogle className='text-lg text-lime-600 inline-flex mr-2' /> S'inscrire avec Google
+              <FaGoogle className='text-lg text-lime-600 inline-flex mr-2' /> Sign up with Google
             </button>
           </form>
         </div>

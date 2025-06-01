@@ -22,7 +22,9 @@ export interface Product {
     prix: number;
     title:string;
     taille?: string;
-    // Add other fields based on your Firestore collection
+    promontion?:number | undefined;
+    bg?:string
+        // Add other fields based on your Firestore collection
   }
   
   export interface Marque {

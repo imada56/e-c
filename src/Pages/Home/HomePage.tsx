@@ -27,8 +27,7 @@ interface HomePageProps {
   currentItems:Product[]
   
 }
-const HomePage:React.FC<HomePageProps>= ({
-  
+const HomePage:React.FC<HomePageProps>= ({  
   currentItems,
   tb1,
   tb2,
@@ -56,16 +55,16 @@ const HomePage:React.FC<HomePageProps>= ({
             </div>
             
         </div>
-        <DivPublicite />
+        <DivPublicite  />
         </div>
         
         <Slider/>
-        <HomeCategory/> 
-       <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb1} Produits={'Produits :'} Ajouter={'Ajouter'}/>
+        <HomeCategory tb={tb1}/> 
+       <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb1} Produits={'Products :'} Ajouter={'Add'}/>
        <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb3} Produits={'Best Selling Products :'} Ajouter={'Ajouter'}/>
        <DivPublicite/>
-       <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb1} Produits={'Offre spéciale :'} Ajouter={'Ajouter'}/>
-       <ContinerMarqueCard tb={tb2}  Produits={'Marque'} Ajouter={'Ajouter'}/>
+       <ContinerProductCard w={'nn'} titlePrdct={titlePrdct} tb={tb1} Produits={'Special offer:'} Ajouter={'Add'}/>
+       <ContinerMarqueCard tb={tb2}  Produits={'Brand'} Ajouter={'Add'}/>
         
         <div className=''>
           <SubTitle title='New Arrival'  path={'allProductsPage'}/>

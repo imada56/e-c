@@ -3,8 +3,11 @@ import { FaYoutube, FaFacebook, FaTwitter } from 'react-icons/fa';
 import Qrcode from '../../Assets/Images/footer/Qrcode 1.png';
 import download_appstore from '../../Assets/Images/footer/download-appstore.png';
 import g_play from '../../Assets/Images/footer/g_play.png';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer2: React.FC = () => {
+  const {t,i18n}=useTranslation();
   return (
     <section className='mt-28 min-h-[250px] bg-black'>
       <div className='flex flex-col gap-10 justify-center'>
@@ -28,8 +31,9 @@ const Footer2: React.FC = () => {
             <p className='text-xs md:text-sm text-white'>My Account</p>
             <p className='text-xs md:text-sm text-white'>Login / Register</p>
             <p className='text-xs md:text-sm text-white'>Cart</p>
-            <p className='text-xs md:text-sm text-white'>Wishlist</p>
-            <p className='text-xs md:text-sm text-white'>Shop</p>
+            <Link className='text-xs md:text-sm text-white cursor-pointer' to={'/wishlist'}>{t('wishlist')}</Link> 
+            <Link className='text-xs md:text-sm text-white cursor-pointer' to={'/about'}>{t('About')}</Link> 
+            <p className='text-xs md:text-sm text-white cursor-pointer'>Shop</p>
           </div>
 
           <div className='w-[15%] flex flex-col gap-2'>

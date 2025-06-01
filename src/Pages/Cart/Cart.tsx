@@ -73,7 +73,7 @@ const Cart: React.FC<CartProps> = ({ Products }) => {
           <div className='flex justify-around items-center shadow-sm mb-2 shadow-slate-500'>
             <p>Product</p>
             <p>Prix</p>
-            <p>Quqntite</p>
+            <p>Quantity</p>
             <p>Subtotal</p>
           </div>
           <div className='w-[100%] h-36 overflow-auto flex flex-col gap-2'>

@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { FaCartPlus, FaAlignCenter, FaFontAwesomeAlt, FaSearch, FaCaretDown, FaCaretUp, FaUser, FaBars, FaHeart } from 'react-icons/fa';
+import { FaCartPlus, FaAlignCenter, FaFontAwesomeAlt, FaSearch, FaCaretDown, FaCaretUp, FaUser, FaBars, FaHeart, FaGift, FaGifts } from 'react-icons/fa';
 //import { ValueContext } from '../Context'; // Ensure this is updated to the correct path
 
 import { useTranslation } from 'react-i18next';
 
 interface NevbarLoginProps {
   fct_rech: (word: string) => void;
-}
+} 
 
 
 const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
@@ -94,10 +94,11 @@ const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
           </div>
         )}
       </div>
-      <div className='py-4 h-[60%] border-b-2 flex justify-around items-center border-l-2 px-6 md:mx-[42px] relative'>
-        <div className='w-[25%] md:w-[55%] lg:w-[px] flex justify-between'>
-          <div>
-            <Link className='my-[7px] mr-[90px] font-bold text-2xl md:text-3xl text-black' to={'/'}>{t('Superettes')}</Link>
+      <div className=' py-4 h-[60%] border-b-2 flex justify-around items-center border-l-2 px-6 md:mx-[42px] relative'>
+        <div className='w-[25%] md:w-[55%] lg:w-[px] flex justify-between '>
+          <div className='flex gap-2  '>
+            <Link className=' font-bold text-2xl md:text-3xl ' to={'/'}>{t('Happinness')}</Link>
+            <FaGift className=' text-3xl md:text-4xl items-center' />
           </div>
           <div
             ref={menu}

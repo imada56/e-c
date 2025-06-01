@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Footer2 from './component/Uitily/Footer2';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes,useLocation } from 'react-router-dom';
 import { useFirebase } from './Firebase/UseFirebase';
 import { Product, Marque } from './Firebase/types'; // Relative to src/Firebase
 import ProductCard from './component/Products/ProductCard';
@@ -38,11 +38,11 @@ const App: React.FC = () => {
     const prudact= useFirebase();
     const marque = useFirebase();
     
-   
 
     const [filtr, setFiltr] = useState<Product[]>(prudact.product);
     const [filtrMq, setFiltrMq] = useState<Marque[]>(marque.marque);
 
+ 
      const onRecherch = (word: string) => {
         if (word !== '') {
           const newTab = prudact.product.filter(j => j.title.includes(word));
@@ -59,6 +59,7 @@ const App: React.FC = () => {
    useEffect(() => {
     setFiltr(prudact.product);
     setFiltrMq(marque.marque);
+    
     }, [(prudact.product )||(marque.marque)]);
     
     //onsole.log('prudact.product ==',prudact.product)
@@ -116,20 +117,38 @@ const App: React.FC = () => {
         const newTabMq =marque.marque.filter((i)=>(i.categorie===cat))
         setFiltrMq(newTabMq);}
       }
-      
+      function ScrollToTop() {
+        const { pathname } = useLocation();
+    
+        useEffect(() => {
+            window.scrollTo(0, 0);
+        }, [pathname]);
+    
+        return null;
+    }
 
   return (
     <div>
          
         <BrowserRouter>
-       
+        <ScrollToTop />
         <NevbarLogin fct_rech={onRecherch}/>
        {/* <ContinerProductCard w={'nn'} titlePrdct={'imad'} tb={filtr} Produits={'Produits :'} Ajouter={'Ajouter'}/>
       */}
       <AuthProvider> 
           <Routes> 
-          <Route index element={<HomePage currentItems={currentItems}  titlePrdct={TitlePrdct} tb1={filtr} tb3={DataProduitPlus} tb2={filtrMq}/>}></Route>
-         <Route path='/detailDuProduit'element={<DetailDuProduit />}></Route> 
+          
+          <Route index element={
+            <HomePage 
+             currentItems={currentItems}
+             titlePrdct={TitlePrdct}
+             tb1={filtr}
+             tb3={DataProduitPlus}
+             tb2={filtrMq}/>}>
+          </Route>
+         <Route path='/detailDuProduit'element={
+          <DetailDuProduit />}>
+         </Route> 
          {/* <Route path='/login'element={<Login imgs={'pc-2.webp'} />}></Route> 
          <Route path='/compts'
            element={<RequireAuth><Compts/></RequireAuth>}>
@@ -150,9 +169,10 @@ const App: React.FC = () => {
          <Route path='/wishlist'element={<Wishlist/>}></Route> 
          </Routes>
           </AuthProvider> 
+          <Footer2 />
       </BrowserRouter>
       
-      <Footer2 />
+      
     </div>
   );
 };

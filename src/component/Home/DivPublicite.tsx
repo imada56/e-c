@@ -1,7 +1,7 @@
 import React from 'react'
-import hero_endframe from '../../Assets/Images/hero_endframe__cvklg0xk3w6e_large 2.png'
+//import gift3 from '../../Assets/Images/gift3.png'
 import {FaApple,FaArrowRight}from 'react-icons/fa'
-// import p13 from '../public/iphone-1.png'
+import p13 from '../../Assets/Images/hero_endframe__cvklg0xk3w6e_large 2.png'
 
 function DivPublicite() {
   return (
@@ -11,7 +11,7 @@ function DivPublicite() {
             <FaApple className='text-4xl text-white'/>
             <p className=' text-xs font-thin text-white'>iPhone 14 Series</p>
           </div>
-          <p className=' font-bold text-white  text-xl md:text-3xl  '>Offre spéciale vente 59% </p>
+          <p className=' font-bold text-white  text-xl md:text-3xl  '>Special offer sale 59%</p>
           <div className='flex gap-2 items-center'>
              <a  className=' text-sm underline  font-thin text-white ' href="">Shop Now</a>
              <FaArrowRight className='text-white'/>
@@ -19,7 +19,7 @@ function DivPublicite() {
           
         </div>
         <div className=' h-[100%] flex items-center justify-center text-center  w-[55%] '>
-        <img className='object-fill h-[90%] md:w-[70%]' src={hero_endframe} alt="" />
+        <img className='object-fill h-[90%] md:w-[70%]' src={p13} alt="" />
         </div>
     </div>
   )
