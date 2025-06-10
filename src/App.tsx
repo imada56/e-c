@@ -24,6 +24,11 @@ import Cart from './Pages/Cart/Cart';
 import AllProductsPage from './Pages/Products/AllProductsPage';
 import AllMarquePage from './Pages/Marque/AllMarquePage';
 import NevbarLogin from './component/Uitily/NevbarLogin';
+import LoginTest from './Pages/PageTest/LoginTest';
+import RegisterTest from './Pages/PageTest/RegisterTest';
+import { auth } from './Firebase/Firebase';
+// import LoginForm from './Pages/Form/LoginForm';
+
 
 
 
@@ -59,7 +64,7 @@ const App: React.FC = () => {
    useEffect(() => {
     setFiltr(prudact.product);
     setFiltrMq(marque.marque);
-    
+      
     }, [(prudact.product )||(marque.marque)]);
     
     //onsole.log('prudact.product ==',prudact.product)
@@ -102,9 +107,9 @@ const App: React.FC = () => {
        // Extract unique categories from marque
        const uniqueCategoriesMq: Set<string> = new Set(marque.marque.map((i) => i.categorie));
        const tblCategorieMq: string[] = ['touts', ...Array.from(uniqueCategoriesMq)];
-       console.log('tblCategorie ==>',tblCategorie)
+       //console.log('tblCategorie ==>',tblCategorie)
     //    const tblCategorieMq =['touts', ...new Set(marque.marque.map((i)=>(i.categorie)))];
-       console.log('tblCategorieMq222 ==>',tblCategorieMq)
+      // console.log('tblCategorieMq222 ==>',tblCategorieMq)
       ///console.log('v==',v)
       
       
@@ -137,15 +142,19 @@ const App: React.FC = () => {
       */}
       <AuthProvider> 
           <Routes> 
-          
-          <Route index element={
+          <Route 
+            index
+             element={
             <HomePage 
              currentItems={currentItems}
              titlePrdct={TitlePrdct}
              tb1={filtr}
              tb3={DataProduitPlus}
-             tb2={filtrMq}/>}>
-          </Route>
+             tb2={filtrMq}
+             />
+             }
+             />
+          
          <Route path='/detailDuProduit'element={
           <DetailDuProduit />}>
          </Route> 
@@ -155,6 +164,8 @@ const App: React.FC = () => {
          </Route> */}
          <Route path='/detailDuProduit'element={<DetailDuProduit/>}></Route> 
          <Route path='/login'element={<Login imgs={'pc-2.webp'} />}></Route> 
+          <Route path='/logintest'element={<LoginTest />}></Route> 
+        <Route path="/registertest" element={<RegisterTest />} />
          <Route path='/compts'element={<RequireAuth><Compts/></RequireAuth>}></Route>
         <Route path='/update'element={<UpdateProfil/>}></Route> 
           <Route path='/forgot_password'element={<ForgotPassword />}></Route> 

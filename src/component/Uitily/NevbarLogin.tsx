@@ -61,10 +61,10 @@ const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
   };
 
   const fct = () => {
-    if (menu.current) {
-      menu.current.style.top = a ? '-500%' : '72px';
+    if (menu.current ) {
+      console.log('a = ',a)
+       menu.current.style.top = a ? '-500%' : '72px';
     }
-    setA(prev => !prev);
   };
   const {t,i18n}=useTranslation();
   
@@ -136,7 +136,7 @@ const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
           </div>
         </div>
         <button
-          className='absolute right-3 text-xl opacity-1 lg:opacity-0'
+          className='absolute right-3 text-xl opacity-1 lg:opacity-0 '
           ref={btn}
           onClick={() => {
             setA(prev => !prev);

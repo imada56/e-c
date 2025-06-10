@@ -1,7 +1,9 @@
 import {initializeApp} from "firebase/app"
-import {getAuth} from "firebase/auth"
+import {fetchSignInMethodsForEmail, getAuth} from "firebase/auth"
 import firebase from "firebase/compat/app"
 import "firebase/compat/firestore"
+import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -11,14 +13,15 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
       
   };
-  const app=initializeApp(firebaseConfig)
-  const auth =getAuth(app)
-  firebase.initializeApp(firebaseConfig)
-  const db = firebase.firestore();
+  const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+  
+export { app, auth, db };
   // const app=initializeApp(firebaseConfig)
   // const auth=getAuth(app);
   //const db= getFirestore(app)
 
 
-  export  {auth,db} ;
+  
 
