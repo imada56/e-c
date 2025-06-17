@@ -17,9 +17,9 @@ const signUpSchema = z.object({
     password : z
     .string()
     .min(8,{message :'password must be at least 8 c'})
-    .regex(/.*[!@#$%^&*()_+{}|[\]\\:";'<>?,./]*./,{
-     message:"Password should contain at least 1 special ch",
-    }),
+    .regex(/.*[!@#$%^&*()_+{}|[\]\\:";'<>?,./]+.*/, {
+  message: "Password should contain at least 1 special character",
+}),
      confirmPassword: z
      .string()
      .min(1,{message :'confirm password is required'}),
@@ -30,8 +30,7 @@ const signUpSchema = z.object({
 type singUpType = z.infer<typeof signUpSchema> ;
 ///
 function NouvelleInscription() {
-/////
-  ////
+
 const  {register ,
     handleSubmit ,
     getFieldState,
@@ -50,7 +49,7 @@ const {   emailAvailabilityStatus,
 
 
 
-  const authContext = useContext(AuthContext);
+  // const authContext = useContext(AuthContext);
   // const { signup } = authContext || {};
 
   const [error, setError] = useState<string>('');
@@ -58,6 +57,7 @@ const {   emailAvailabilityStatus,
   // const emailRef = useRef<HTMLInputElement>(null);
   // const passwordRef = useRef<HTMLInputElement>(null);
   // const confirmPasswordRef = useRef<HTMLInputElement>(null);
+  
   const navigate = useNavigate();
 
   // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -95,7 +95,7 @@ const {   emailAvailabilityStatus,
 
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-    console.log("User created:", userCredential.user);
+    // console.log("User created:", userCredential.user);
 
     // Rediriger après succès
     navigate("/compts");
@@ -131,7 +131,9 @@ const emailOnBlurHandler= async (e:React.FocusEvent<HTMLInputElement>)=>{
           <img className='h-[100%]' src={dlbeatsnoop} alt='Beatsnoop' />
         </div>
         <div className='md:w-[35%] md:static absolute'>
-          <form className='container m-auto mt-24 h-64 w-96 flex flex-col justify-around items-center ' onSubmit={handleSubmit(submitForm)}>
+          <form 
+          className='container m-auto mt-24 h-64 w-96 flex flex-col justify-around items-center '
+           onSubmit={handleSubmit(submitForm)}>
             <label htmlFor='' className='font-medium text-black text-2xl'>
               New Account
             </label>

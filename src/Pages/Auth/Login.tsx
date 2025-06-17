@@ -6,6 +6,8 @@ import {z} from 'zod'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Input from '../Form/Input';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../Firebase/Firebase';
  
 
 interface LoginProps {
@@ -15,12 +17,12 @@ interface LoginProps {
 
 
 const signInSchema = z.object({
-     firstName : z.string().min(1,{message :'firstName error'}),
      email : z.string().min(1,{message :'required email !'}).email(),
      password : z
      .string()
-     .min(8,{message :'password must be at least 8 c'})    
+    //  .min(8,{message :'password must be at least 8 c'})    
  })
+ 
  type singInType = z.infer<typeof signInSchema> ;
 
 
@@ -28,42 +30,44 @@ const signInSchema = z.object({
 
 
 
-const Login: React.FC<LoginProps>=({imgs})=> {
+const Login: React.FC<LoginProps>=()=> {
+
+  
+  const [error ,setError] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const redirectPath = location.state?.path || '/compts';
 
 const  {register ,handleSubmit ,formState:{errors}} = useForm<singInType>(
     {
     mode:'onBlur',    
     resolver: zodResolver(signInSchema),
     })
-const submitForm :SubmitHandler <singInType> = (data)=>{
-    console.log(data)
-}
 
+const submitForm: SubmitHandler<singInType> = async ({ email, password }) => {
 
-  const authContext = useContext(AuthContext); // Retrieve the context value
-  const { login } = authContext || {}; // Destructure login from authContext or default to empty object
-  const [error ,setError] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(false);
-  const emailRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const redirectPath = location.state?.path || '/compts';
-
-  const handleSubmitt = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    setError('');
+    setLoading(true);
     try {
-      setError('');
-      setLoading(true);
-      if (emailRef.current && passwordRef.current && login) {
-        await login(emailRef.current.value ,passwordRef.current.value);   
-        navigate(redirectPath, { replace: true });   
+      
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate(redirectPath, { replace: true }); 
+      
+    } catch (err: any) {
+      if (err.code === 'auth/invalid-credential') {
+        setError("Incorrect password or email");
+      } else {
+        setError("Error while connecting");
       }
-    } catch {
-        setError('Failed to Login');   
+    } finally {
+      setLoading(false);
     }
-      setLoading(false)
-}
+  };
+
+  
+
  
   return (
     <section className='  min-h-[320px] mt-[140px]'>
@@ -72,9 +76,10 @@ const submitForm :SubmitHandler <singInType> = (data)=>{
     <img className='h-[100%] ' src={dlbeatsnoopImage} alt="" />
   </div>
   <div className='md:w-[35%] md:static absolute '>
-  <form onSubmit={handleSubmit(submitForm)} className='container m-auto mt-24  h-64 w-96 flex flex-col justify-around items-center '>
+  <form  onSubmit={handleSubmit(submitForm)} 
+  className=' container m-auto mt-24  h-64 w-96 flex flex-col justify-around items-center '>
   <label htmlFor="" className=' font-medium  text-2xl '>Login</label>
-  {/* <label className=' font-black  text-base items-end  '>Email :</label> */}
+  
     {error && <h1 className='text-red-500'>{error}</h1>}
     <Input
           label={' Email '}
@@ -89,7 +94,12 @@ const submitForm :SubmitHandler <singInType> = (data)=>{
           register={register}
           error={errors.password?.message} />
 
-    <button type='submit' disabled={loading}  className=' py-1 text-white cursor-pointer border-2 px-2 bg-sky-600 border-sky-600 rounded-lg'>connected</button>
+    <button 
+    type='submit' 
+    disabled={loading}  
+    className=' py-1 text-white cursor-pointer border-2 px-2 bg-sky-600 border-sky-600 rounded-lg'>
+    connected
+    </button>
     
     <Link className='text-blue-300 underline font-serif cursor-pointer ' to={'/forgot_password'}>Forgot Password
     </Link>
