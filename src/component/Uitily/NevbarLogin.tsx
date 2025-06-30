@@ -7,10 +7,10 @@ import { useTranslation } from 'react-i18next';
 
 interface NevbarLoginProps {
   fct_rech: (word: string) => void;
-} 
+}
 
 
-const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
+const NevbarLogin: React.FC<NevbarLoginProps> = ({ fct_rech }) => {
   const headerScroll = useRef<HTMLDivElement>(null);
   const menu = useRef<HTMLDivElement>(null);
   const btn = useRef<HTMLButtonElement>(null);
@@ -45,8 +45,8 @@ const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
     };
   }, []);
 
-//   const { data, onChange } = React.useContext(ValueContext);
-//   const v = data[0];
+  //   const { data, onChange } = React.useContext(ValueContext);
+  //   const v = data[0];
 
   useEffect(() => {
     if (inputRecherch.current) {
@@ -61,13 +61,13 @@ const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
   };
 
   const fct = () => {
-    if (menu.current ) {
-      console.log('a = ',a)
-       menu.current.style.top = a ? '-500%' : '72px';
+    if (menu.current) {
+      console.log('a = ', a)
+      menu.current.style.top = a ? '-500%' : '72px';
     }
   };
-  const {t,i18n}=useTranslation();
-  
+  const { t, i18n } = useTranslation();
+
   return (
     <header ref={headerScroll} className='bg-[#FFFFFF] fixed top-0 left-0 w-full h-[130px] z-30 transition-all duration-200'>
       <div className='h-[40%] bg-[#000000] sm:pt-3 sm:px-2 flex justify-between relative'>
@@ -79,7 +79,7 @@ const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
           onClick={() => setIsOpen(prev => !prev)}
           className='xl:mr-[130px] sm:text-xs xl:text-lg xl:my-[7px] text-[#FAFAFA] inline-flex gap-1 font-medium'
         >
-          Franch
+          French
           {!isOpen ? (
             <FaCaretDown className='mt-1' />
           ) : (
@@ -88,9 +88,9 @@ const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
         </button>
         {isOpen && (
           <div className='absolute top-9 z-30 bg-slate-50 mt-5 ml-[82%] w-36'>
-            <a onClick={()=>(i18n.changeLanguage('en'))} className='my-2 font-mono block cursor-pointer hover:bg-slate-200'>English</a>
-            <a onClick={()=>(i18n.changeLanguage('ar'))} className='my-2 font-mono block cursor-pointer hover:bg-slate-200'>Arab</a>
-            <a onClick={()=>(i18n.changeLanguage('fr'))} className='my-2 font-mono block cursor-pointer hover:bg-slate-200'>French</a>
+            <a onClick={() => (i18n.changeLanguage('en'))} className='my-2 font-mono block cursor-pointer hover:bg-slate-200'>English</a>
+            <a onClick={() => (i18n.changeLanguage('ar'))} className='my-2 font-mono block cursor-pointer hover:bg-slate-200'>Arab</a>
+            <a onClick={() => (i18n.changeLanguage('fr'))} className='my-2 font-mono block cursor-pointer hover:bg-slate-200'>French</a>
           </div>
         )}
       </div>
@@ -131,7 +131,7 @@ const NevbarLogin: React.FC <NevbarLoginProps> = ({ fct_rech }) => {
               <FaHeart className='mt-1' />
             </Link>
             <Link className='underline text-xl cursor-pointer' to={'/cartPage'}>
-              <FaCartPlus className='mt-1' />
+              <FaCartPlus className='mt-1 ' />
             </Link>
           </div>
         </div>

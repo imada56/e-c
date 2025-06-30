@@ -28,7 +28,6 @@ const signUpSchema = z.object({
     path :['confirmPassword']
 })
 type singUpType = z.infer<typeof signUpSchema> ;
-///
 function NouvelleInscription() {
 
 const  {register ,
@@ -48,44 +47,11 @@ const {   emailAvailabilityStatus,
   } = UseCheckEmailAvailability() 
 
 
-
-  // const authContext = useContext(AuthContext);
-  // const { signup } = authContext || {};
-
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-  // const emailRef = useRef<HTMLInputElement>(null);
-  // const passwordRef = useRef<HTMLInputElement>(null);
-  // const confirmPasswordRef = useRef<HTMLInputElement>(null);
+
   
-  const navigate = useNavigate();
-
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-
-  //   // Validate password match
-  //   if (passwordRef.current?.value !== confirmPasswordRef.current?.value) {
-  //     return setError('Passwords do not match');
-  //   }
-
-  //   try {
-  //     setError('');
-  //     setLoading(true);
-
-  //     // Ensure all refs have values before accessing .value
-  //     if (signup && emailRef.current?.value && passwordRef.current?.value && confirmPasswordRef.current?.value) {
-  //       await signup(emailRef.current.value, passwordRef.current.value);
-  //       emailRef.current.value = '';
-  //       passwordRef.current.value = '';
-  //       confirmPasswordRef.current.value = '';
-  //       navigate('/compts');
-  //     }
-  //   } catch {
-  //     setError('Failed to create an account');
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+ const navigate = useNavigate();
 
  const submitForm: SubmitHandler<singUpType> = async (data) => {
   const { email, password } = data;
@@ -95,9 +61,6 @@ const {   emailAvailabilityStatus,
 
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-    // console.log("User created:", userCredential.user);
-
-    // Rediriger après succès
     navigate("/compts");
   } catch (err: any) {
     console.error(err);

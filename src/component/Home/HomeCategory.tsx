@@ -20,12 +20,18 @@ const HomeCategory : React.FC<HomeCategoryProps> = ({
     <section className=''>
         <SubTitle title={'Promotion'} btnTitle={'Add'} path={'allCategoryPage'}/>
     <div className=' mt-3 p-2 border-2  grid items-center gap-2   grid-cols-2  sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 '>
-        {tablePromontion.map((i)=>(
-         
-         parseInt(i.id) < 5 ? (
-        <CardCategory  key={i.id} promotion={i.promontion} background={i.bg} img={i.imgs} title={`Promotion`}/>
-             ):null        
-                    ))}
+       {tablePromontion
+    .slice(0, 4)
+    .map((i) => (
+        <CardCategory
+            key={i.id}
+            promotion={i.promontion}
+            background={i.bg}
+            img={i.imgs}
+            title="Promotion"
+            prix={i.prix}
+        />
+    ))}
     </div>
     
     </section>
