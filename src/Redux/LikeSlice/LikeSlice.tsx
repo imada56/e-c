@@ -44,11 +44,11 @@ export const LikeSlice = createSlice(
          }
         },
       addLiked: (state,action:PayloadAction<any>) => {
-        //console.log('id====',action.payload.id)
+      
          if(state.TabLike.includes(action.payload.id)){
            const index = state.TabLike.indexOf(action.payload.id)
            if(index>=0){state.TabLike.splice(index,1)}
-            // console.log('deux fois chriki')
+            
          }else{
             state.TabLike.push(action.payload.id)
          }

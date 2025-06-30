@@ -55,11 +55,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
  
   
  
-  //console.log('reeeeeeeererererre ',x)
-  // const dispatch = useDispatch();
-  //const [TabLike,setTabLike]=useState(DataProduit[1].filter((i)=>(i.id===id)));
-  
-  
+ 
   const handelclick=()=>{
   dispatch(addLiked({id}))
   setIsVisibol(prev=>!prev)
@@ -94,20 +90,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
        <img src={imgv} alt="" />
        <img src={imgv} alt="" />
        <img src={imgv1} alt="" />
-       {/* <p>(150 Reviews0)</p>
-       <p className='border-l-2 border-black pl-1 text-green-400'> In Stock</p> */}
+
              </div> 
          </div>
          </Link> 
          </div>
-     {/* <div className='flex gap-1 items-center text-xs'>
-       <img src={imgv} alt="" />
-       <img src={imgv} alt="" />
-       <img src={imgv} alt="" />
-       <img src={imgv1} alt="" />
-       <p>(150 Reviews0)</p>
-       <p className='border-l-2 border-black pl-1 text-green-400'> In Stock</p>
-        </div> */}
+     
     </div>
     
   );
